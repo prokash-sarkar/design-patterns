@@ -1,3 +1,4 @@
+import builder.BankAccount
 import factory.Shape
 import factory.ShapeFactory
 import singletone.SingletoneObject
@@ -11,7 +12,8 @@ import strategy.*
 fun main() {
     //testStrategyDesignPattern()
     //testSingletoneDesignPattern()
-    testFactoryDesignPattern()
+    //testFactoryDesignPattern()
+    testBuilderDesignPattern()
 }
 
 /**
@@ -59,7 +61,7 @@ private fun testSingletoneDesignPattern() {
 /**
  * <p> In Factory pattern, we create object without exposing the creation logic
  * to the client and refer to newly created object using a common interface
- * This type of design pattern comes under <b> creational pattern</b>
+ * This type of design pattern comes under <b>creational pattern</b>
  *
  * Source: https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
  * </p>
@@ -75,4 +77,24 @@ private fun testFactoryDesignPattern() {
 
     val squareShape: Shape? = shapeFactory.getShape(ShapeFactory.Type.Square)
     println(squareShape?.draw())
+}
+
+/**
+ * <p> In Builder pattern, we can build a complex object using simple objects
+ * and using a step by step approach
+ * This type of design pattern comes under <b>creational pattern</b>
+ *
+ * A Builder class builds the final object step by step.
+ * This builder is independent of other objects.
+ *
+ * Source: https://www.baeldung.com/creational-design-patterns
+ * </p>
+ */
+private fun testBuilderDesignPattern() {
+    val bankAccount = BankAccount.Builder("Prokash Sarkar", "1")
+            .withEmail("p@s.com")
+            .wantNewsletter(true)
+            .build()
+
+    println(bankAccount)
 }

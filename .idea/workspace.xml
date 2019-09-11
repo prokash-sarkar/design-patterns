@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc6f836c-21db-478a-9722-f933e46fcb62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/factory/Circle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factory/Rectangle.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factory/Shape.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factory/ShapeFactory.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/factory/Square.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/builder/BankAccount.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/design-patterns/TestKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/design-patterns/TestKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,10 +21,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -115,5 +111,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="name" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
