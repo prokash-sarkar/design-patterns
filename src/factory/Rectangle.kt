@@ -8,7 +8,7 @@ package factory
 class Rectangle : Shape {
 
     override fun draw() {
-        println("Inside Rectangle::draw() method.");
+        println("Inside Rectangle::draw() method.")
     }
 
 }

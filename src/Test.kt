@@ -1,8 +1,11 @@
+import abstract_factory.AbstractFactory
+import abstract_factory.FactoryProducer
 import builder.BankAccount
 import factory.Shape
 import factory.ShapeFactory
 import singletone.SingletoneObject
 import strategy.*
+
 
 /**
 @author Prokash Sarkar
@@ -13,7 +16,8 @@ fun main() {
     //testStrategyDesignPattern()
     //testSingletoneDesignPattern()
     //testFactoryDesignPattern()
-    testBuilderDesignPattern()
+    testAbstractFactoryDesignPattern()
+    //testBuilderDesignPattern()
 }
 
 /**
@@ -77,6 +81,42 @@ private fun testFactoryDesignPattern() {
 
     val squareShape: Shape? = shapeFactory.getShape(ShapeFactory.Type.Square)
     println(squareShape?.draw())
+}
+
+/**
+ * <p> The Abstract Factory patterns work around a super-factory which creates other factories.
+ * This factory is also called as factory of factories.
+ * This type of design pattern comes under <b>creational pattern</b>
+ *
+ * In Abstract Factory pattern an interface is responsible for creating a factory
+ * of related objects without explicitly specifying their classes.
+ * Each generated factory can give the objects as per the Factory pattern.
+ *
+ * Source: https://www.tutorialspoint.com/design_pattern/abstract_factory_pattern.htm
+ * </p>
+ */
+private fun testAbstractFactoryDesignPattern() {
+    //get non rounded shape factory
+    val shapeFactory = FactoryProducer.getFactory(false)
+    //get an object of Shape Rectangle
+    val shape1 = shapeFactory.getShape(AbstractFactory.Type.Rectangle)
+    //call draw method of Shape Rectangle
+    shape1.draw()
+    //get an object of Shape Square
+    val shape2 = shapeFactory.getShape(AbstractFactory.Type.Square)
+    //call draw method of Shape Square
+    shape2.draw()
+
+    //get rounded shape factory
+    val shapeFactory1 = FactoryProducer.getFactory(true)
+    //get an object of Shape Rectangle
+    val shape3 = shapeFactory1.getShape(AbstractFactory.Type.Rectangle)
+    //call draw method of Shape Rectangle
+    shape3.draw()
+    //get an object of Shape Square
+    val shape4 = shapeFactory1.getShape(AbstractFactory.Type.Square)
+    //call draw method of Shape Square
+    shape4.draw()
 }
 
 /**
