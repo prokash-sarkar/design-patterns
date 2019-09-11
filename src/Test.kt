@@ -1,3 +1,5 @@
+import factory.Shape
+import factory.ShapeFactory
 import singletone.SingletoneObject
 import strategy.*
 
@@ -8,7 +10,8 @@ import strategy.*
  **/
 fun main() {
     //testStrategyDesignPattern()
-    testSingletoneDesignPattern()
+    //testSingletoneDesignPattern()
+    testFactoryDesignPattern()
 }
 
 /**
@@ -38,15 +41,38 @@ private fun testStrategyDesignPattern() {
 
 /**
  * <p> In Singletone pattern, only one instance of a class is created
- * This type of design pattern comes under creational pattern.
+ * This type of design pattern comes under <b>creational pattern</b>
  *
  * This pattern involves a single class which is responsible to create an object
  * while making sure that only single object gets created.
  * This class provides a way to access its only object which can be accessed directly
  * without need to instantiate the object of the class.
+ *
+ * Source: https://www.tutorialspoint.com/design_pattern/singleton_pattern.htm
  * </p>
  */
 private fun testSingletoneDesignPattern() {
     val singletoneObject = SingletoneObject.getInstance()
     singletoneObject.showMessage()
+}
+
+/**
+ * <p> In Factory pattern, we create object without exposing the creation logic
+ * to the client and refer to newly created object using a common interface
+ * This type of design pattern comes under <b> creational pattern</b>
+ *
+ * Source: https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
+ * </p>
+ */
+private fun testFactoryDesignPattern() {
+    val shapeFactory = ShapeFactory()
+
+    val circleShape: Shape? = shapeFactory.getShape(ShapeFactory.Type.Circle)
+    println(circleShape?.draw())
+
+    val rectangleShape: Shape? = shapeFactory.getShape(ShapeFactory.Type.Rectangle)
+    println(rectangleShape?.draw())
+
+    val squareShape: Shape? = shapeFactory.getShape(ShapeFactory.Type.Square)
+    println(squareShape?.draw())
 }
