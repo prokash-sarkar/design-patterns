@@ -1,5 +1,6 @@
 import abstract_factory.AbstractFactory
 import abstract_factory.FactoryProducer
+import adapter.AudioPlayer
 import builder.BankAccount
 import factory.Shape
 import factory.ShapeFactory
@@ -16,8 +17,9 @@ fun main() {
     //testStrategyDesignPattern()
     //testSingletoneDesignPattern()
     //testFactoryDesignPattern()
-    testAbstractFactoryDesignPattern()
+    //testAbstractFactoryDesignPattern()
     //testBuilderDesignPattern()
+    testAdapterDesignPattern()
 }
 
 /**
@@ -84,7 +86,7 @@ private fun testFactoryDesignPattern() {
 }
 
 /**
- * <p> The Abstract Factory patterns work around a super-factory which creates other factories.
+ * <p> The Abstract Factory pattern work around a super-factory which creates other factories.
  * This factory is also called as factory of factories.
  * This type of design pattern comes under <b>creational pattern</b>
  *
@@ -137,4 +139,24 @@ private fun testBuilderDesignPattern() {
             .build()
 
     println(bankAccount)
+}
+
+/**
+ * <p> The Adapter pattern works as a bridge between two incompatible interfaces.
+ * This type of design pattern comes under <b>structural pattern</b>
+ * as this pattern combines the capability of two independent interfaces.
+ *
+ * This pattern involves a single class which is responsible to join functionalities
+ * of independent or incompatible interfaces.
+ *
+ * Source: https://www.tutorialspoint.com/design_pattern/adapter_pattern.htm
+ * </p>
+ */
+private fun testAdapterDesignPattern() {
+    val audioPlayer = AudioPlayer()
+
+    audioPlayer.play("mp3", "beyond the horizon.mp3")
+    audioPlayer.play("mp4", "alone.mp4")
+    audioPlayer.play("vlc", "far far away.vlc")
+    audioPlayer.play("avi", "mind me.avi")
 }
